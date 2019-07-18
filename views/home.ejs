@@ -6,7 +6,17 @@
         <div id="list">
             <ul>
                 <% todos.forEach(function(item) { %>
-                <li><%= item %></li>
+                    <% if (!item.taskComplete) { %>
+                    <% } %>
+
+                    <li>
+                        <%= item.entry %>
+                        <form action="/<%= item._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-xs btn-default btn-block" >Delete</button>
+                        </form>
+                        <button class="btn btn-xs btn-default btn-block" href="/<%= item._id %>">show</button>
+                    </li>
+                    
                 <% }); %>
             </ul>
             <div>
