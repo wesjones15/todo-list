@@ -1,11 +1,21 @@
-<% include ../partials/header %>
+<% include ./partials/header %>
 
 <div class="container">
-    <h1>Todo List</h1>
-    
-
+    <div class="row">
+        <h1>Todo List</h1>
+        <div id="list">
+            <ul>
+                <% todos.forEach(function(item) { %>
+                <li><%= item %></li>
+                <% }); %>
+            </ul>
+            <div>
+                <a href="/new">Add new todo</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 
     
-<% include ../partials/footer %>
+<% include ./partials/footer %>
