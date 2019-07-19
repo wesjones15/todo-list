@@ -3,19 +3,22 @@
 <div class="container">
     <div class="row">
         <h1>Todo List</h1>
-        <div id="list">
+        <div>
             <ul>
                 <% todos.forEach(function(item) { %>
                     <% if (!item.taskComplete) { %>
                     <% } %>
 
-                    <li>
+                    <div id="card">
                         <%= item.entry %>
-                        <form action="/<%= item._id %>?_method=DELETE" method="POST">
-                            <button class="btn btn-xs btn-default btn-block" >Delete</button>
-                        </form>
-                        <button class="btn btn-xs btn-default btn-block" href="/<%= item._id %>">show</button>
-                    </li>
+                        <div>
+                            <a class="todoOpt btn btn-xs btn-default" href="/<%= item._id %>">Details</a>
+                            <form class="todoOpt" action="/<%= item._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-xs btn-default" >Delete</button>
+                            </form>
+                        </div>
+                        
+                    </div>
                     
                 <% }); %>
             </ul>

@@ -63,7 +63,11 @@ app.post("/", function(req, res) {
 // Currently shows plain json object 
 app.get("/:id", function(req, res) {
     Todo.findById(req.params.id, function(err, foundTodo) {
-        res.render("show", {todos:foundTodo});
+        if (err) {
+            console.log("SHOW PAGE ERROR: " + err);
+        } else {
+            res.render("show", {todos:foundTodo});
+        }
     });
 });
 

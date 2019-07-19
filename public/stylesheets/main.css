@@ -7,3 +7,13 @@
 .container {
     width: 30%;
 }
+
+.todoOpt {
+    display: inline;
+    /* float: left; */
+}
+
+#card {
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
